@@ -2,17 +2,13 @@
   description = "nix flake for simplexmq";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     hackage = {
       url = "github:input-output-hk/hackage.nix";
       flake = false;
     };
     haskellNix = {
       url = "github:input-output-hk/haskell.nix/armv7a";
-      inputs = {
-        hackage.follows = "hackage";
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.hackage.follows = "hackage";
     };
     flake-utils.url = "github:numtide/flake-utils";
   };
